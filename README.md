@@ -107,6 +107,9 @@
     }
 ```
 
+동시성 이슈 원인
+![image](https://github.com/greeneryjin/Concurrency_issue/assets/87289562/b3e7c112-69f3-4f17-9314-103483ba7019)
+
 동시성 원인은 갱신 분실로 먼저 실행된 트랜잭션의 결과를 나중에 실행된 트래잭션이 결과를 덮어쓰는 현상이 발생했습니다.
 
 
@@ -142,6 +145,10 @@
 
 낙관적 락은 어플리케이션단에서 버전을 사용해서 동시성을 제어하고 동시성 이슈가 발생하지 않는 것을 가정해서 사용합니다. 
 
+낙관적 락 프로세스
+
+![image](https://github.com/greeneryjin/Concurrency_issue/assets/87289562/49dfc5ba-58b0-44b3-9553-6e73e5903f3b)
+
 낙관적 락 주의 사항
 
 1. 데드락
@@ -157,6 +164,11 @@
 ```
 
 비관적 락은 데이터베이스단에서 락을 사용해서 동시성을 제어하고 동시성 이슈가 발생할 것을 가정해서 사용합니다. 
+
+비관적 락 프로세스
+
+![image](https://github.com/greeneryjin/Concurrency_issue/assets/87289562/ead66428-5f6c-4392-a2e1-1aaf04bbc3f2)
+
 
 비관적 락 주의 사항
 
@@ -224,5 +236,15 @@ public @interface DistributeLock {
             throw e;
         }
     }
-
 ```
+
+분산 락
+
+분산 락 프로세스
+
+![image](https://github.com/greeneryjin/Concurrency_issue/assets/87289562/cff1ffe8-303f-4717-abed-a88491a9323c)
+
+분산 락 주의 사항
+
+1. 데드락
+2. 예외 발생 시 예외 처리 필수 및 롤백 처리
