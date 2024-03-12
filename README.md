@@ -1,4 +1,4 @@
-# 우리FISA 기술 세미나 
+# 동시성 이슈 테스트 
 
 ## 🖥️ SpringBoot, JPA, Redis 환경에서 동시성 제어 
 
