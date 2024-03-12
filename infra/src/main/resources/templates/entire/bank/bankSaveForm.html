@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>계좌 개설 및 입금</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="w3-main" >
+        <!--form 태그-->
+        <h3>계좌 개설 페이지</h3>
+        <form class="board" th:action="@{/api/bank/create}" th:object="${bankDTO}" method="post" enctype="multipart/form-data">
+            <div th:style="${'height: 100%; width: 100%; object-fit: cover'}">
+                <div class="container-content">
+
+                    <label for="content">로그인 ID</label> <br>
+                    <input type="text" id="loginId" th:field="*{loginId}" class="form-control"> <br>
+
+                    <label for="content">입금</label> <br>
+                    <input type="text" id="content" th:field="*{balance}" class="form-control">
+                </div>
+                <button class="btn-save" type="submit">개설 하기</button>
+            </div>
+        </form>
+    </div>
+    </div>
+</body>
+</html>

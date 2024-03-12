@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>내 계좌 한눈에 보기</title>
+</head>
+<body>
+
+<div layout:fragment="content" >
+    <div class="w3-main" >
+        <h3>전 계좌 보기</h3>
+        <table id="boardTable">
+            <tr th:each="bankDto : ${bankDto}">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            회원 ID:<span th:text="${bankDto.loginId}"></span><br>
+                            회원 성함:<span th:text="${bankDto.name}"></span><br>
+                            계좌 ID:<span th:text="${bankDto.id}"></span><br>
+                            계좌 잔액:<span th:text="${bankDto.balance}"></span><br><br>
+                        </div>
+                    </div>
+                </div>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

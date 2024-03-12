@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<div th:fragment="header">
+    <div class="w3-main" style="margin-left:300px"> </div>
+    <header id="portfolio">
+        <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+        <div class="w3-container">
+            <h1><b>은행 동시성 테스트</b></h1>
+            <div class="w3-section w3-bottombar w3-padding-16">
+                <button class="w3-button w3-black" >
+                    <a th:href="@{/api/bank/bankAll}" style="text-decoration:none">전 계좌 조회 </a>
+                </button>
+                <button class="w3-button w3-black">
+                    <a th:href="@{/api/bank/create}" style="text-decoration:none">계좌 개설 </a>
+                </button>
+                <button sec:authorize="isAnonymous()" class="w3-button w3-black" >
+                    <a th:href="@{/account/login}" style="text-decoration:none">로그인 </a>
+                </button>
+                <button class="w3-button w3-black" >
+                    <a th:href="@{/api/account/create}" style="text-decoration:none">회원 가입 </a>
+                </button>
+            </div>
+        </div>
+    </header>
+</div>
+</html>

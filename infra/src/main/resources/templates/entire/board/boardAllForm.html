@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>전체 게시판</title>
+    <!-- jQuery 라이브러리를 포함합니다. -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        function updateCount(boardId) {
+            $.ajax({
+                type: "PUT",
+                url: "/api/board/viewCount/" + boardId,
+                success: function (data) {
+                    console.log(data);
+                    //window.location.href = "http://localhost:8080/api/board/boardOne";
+                },
+                error: function (xhr, status, error) {
+                    console.error("조회수 업데이트 중 오류 발생:", error);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<div layout:fragment="content" >
+    <div class="w3-main" >
+        <table id="boardTable">
+            <tr th:each="board : ${board}">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            게시판 ID:<span th:text="${board.id}"></span><br>
+                            유저 ID:<span th:text="${board.loginId}"></span><br>
+                            내용:<span th:text="${board.content}"></span><br>
+                            조회수:<span th:text="${board.viewCount}"></span><br><br>
+                        </div>
+                    </div>
+                </div>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
