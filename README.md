@@ -187,7 +187,7 @@
 
 ![image](https://github.com/greeneryjin/Concurrency_issue/assets/87289562/e94d3ef4-cfe1-44c5-a14c-ac68bbb9e520)
 
-##### (2) 분산 락 
+##### (3) 분산 락 
 
 ```JAVA
 @Target(ElementType.METHOD)
