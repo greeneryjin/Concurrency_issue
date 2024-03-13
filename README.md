@@ -149,6 +149,9 @@
 
 ![image](https://github.com/greeneryjin/Concurrency_issue/assets/87289562/49dfc5ba-58b0-44b3-9553-6e73e5903f3b)
 
+버전을 갱신하면서 동시성을 제어합니다.
+
+
 낙관적 락 주의 사항
 
 1. 데드락
@@ -168,6 +171,8 @@
 비관적 락 프로세스
 
 ![image](https://github.com/greeneryjin/Concurrency_issue/assets/87289562/ead66428-5f6c-4392-a2e1-1aaf04bbc3f2)
+
+배타락을 걸어서 동시성을 제어합니다. 
 
 
 비관적 락 주의 사항
@@ -243,6 +248,8 @@ public @interface DistributeLock {
 분산 락 프로세스
 
 ![image](https://github.com/greeneryjin/Concurrency_issue/assets/87289562/cff1ffe8-303f-4717-abed-a88491a9323c)
+
+AOP를 사용해서 트랜잭션을 분리합니다. 레디스의 락을 먼저 걸고 트랜잭션이 커밋될 때까지 락을 가지고 있다가 커밋이 끝나면 락을 해제합니다. 
 
 분산 락 주의 사항
 
